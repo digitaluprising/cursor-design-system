@@ -1,0 +1,60 @@
+---
+alwaysApply: true
+---
+
+# Description Length Guidelines
+
+## Character Limit
+
+All descriptions must be **130 characters or less** - approximately the length of:
+"Cursor is a fork of VSCode, so you can use all your favorite extensions and keybindings. It's the editor you"
+
+## What This Applies To
+
+- **Component descriptions** in JSDoc comments
+- **Prop descriptions** in TypeScript interfaces
+- **Alt text** for images
+- **Button text** and UI labels
+- **Tooltips** and help text
+- **Error messages** and validation text
+- **Meta descriptions** and SEO content
+
+## Examples
+
+```tsx
+// ✅ Good - concise and clear (under 130 chars)
+interface ButtonProps {
+  /** Primary action button with hover effects */
+  children: React.ReactNode;
+  /** Button style variant */
+  variant?: 'primary' | 'secondary';
+}
+
+// ✅ Good - JSDoc comment (under 130 chars)
+/**
+ * Button component with Apple-level design precision
+ * Features refined interactions and micro-animations
+ */
+
+// ✅ Good - alt text (under 130 chars)
+<ImageWrapper
+  src="/hero.jpg"
+  alt="Developer using Cursor AI code editor on laptop"
+  width={800}
+  height={600}
+/>
+
+// ❌ Too long - exceeds 130 characters
+interface ButtonProps {
+  /** This is a primary action button component that includes sophisticated hover effects and micro-animations for enhanced user experience */
+  children: React.ReactNode;
+}
+```
+
+## Writing Tips
+
+- Be concise and direct
+- Focus on the essential information
+- Use active voice
+- Avoid unnecessary words
+- Test your descriptions by counting characters

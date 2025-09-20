@@ -1,0 +1,30 @@
+---
+alwaysApply: true
+---
+
+# Project Structure Guide
+
+This is a Next.js 15 design system project with TypeScript and Tailwind CSS.
+
+## Key Files and Directories
+
+- **Main entry point**: [src/app/page.tsx](mdc:src/app/page.tsx) - The main page showcasing all components
+- **Component exports**: [src/components/index.ts](mdc:src/components/index.ts) - Centralized component exports
+- **Global styles**: [src/app/globals.css](mdc:src/app/globals.css) - CSS variables and global styles
+- **Tailwind config**: [tailwind.config.ts](mdc:tailwind.config.ts) - Custom theme and design tokens
+- **TypeScript config**: [tsconfig.json](mdc:tsconfig.json) - TypeScript configuration with path mapping
+
+## Component Organization
+
+All components are located in `src/components/` and follow these patterns:
+- Each component has its own file (e.g., `Button.tsx`, `Typography.tsx`)
+- Components are exported from [src/components/index.ts](mdc:src/components/index.ts) in alphabetical order
+- Use the `@/components` import path for clean imports
+- Components follow React.FC pattern with TypeScript interfaces
+
+## Design System Principles
+
+- **Apple-level precision**: Components are designed with refined interactions and micro-animations
+- **Consistent spacing**: Use the spacing scale defined in Tailwind config
+- **Semantic color system**: Use CSS variables for theming (background, foreground, muted, etc.)
+- **Typography hierarchy**: Use the Typography component for all text with proper semantic variants

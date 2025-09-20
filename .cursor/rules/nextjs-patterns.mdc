@@ -1,0 +1,75 @@
+---
+globs: *.tsx,*.ts
+---
+
+# Next.js 15 Development Patterns
+
+## Image Handling
+
+**CRITICAL**: Always use the `<Image />` component from Next.js as per user rules.
+
+Use the ImageWrapper component for consistent image handling:
+
+```tsx
+import ImageWrapper from '@/components/ImageWrapper';
+
+// For regular images
+<ImageWrapper
+  src="/path/to/image.jpg"
+  alt="Descriptive alt text"
+  width={800}
+  height={600}
+  className="rounded-lg"
+/>
+
+// For fill images
+<ImageWrapper
+  src="/path/to/image.jpg"
+  alt="Descriptive alt text"
+  fill
+  sizes="(max-width: 768px) 100vw, 50vw"
+  className="rounded-lg"
+/>
+```
+
+## Import Patterns
+
+Use the path mapping defined in [tsconfig.json](mdc:tsconfig.json):
+
+```tsx
+// ✅ Correct - use @/ alias
+import { Button, Typography } from '@/components';
+import ImageWrapper from '@/components/ImageWrapper';
+
+// ❌ Avoid - relative imports
+import { Button } from '../components/Button';
+```
+
+## Component Exports
+
+All components must be exported from [src/components/index.ts](mdc:src/components/index.ts):
+
+```tsx
+// Add new component to index.ts
+export { default as NewComponent } from './NewComponent';
+```
+
+## TypeScript Configuration
+
+- Use strict TypeScript settings as defined in [tsconfig.json](mdc:tsconfig.json)
+- Leverage the `@/*` path mapping for clean imports
+- Use proper type definitions for all props and state
+
+## App Router Patterns
+
+- Use the app directory structure
+- Leverage server and client components appropriately
+- Use proper metadata and SEO optimization
+- Follow Next.js 15 best practices for performance
+
+## Performance Considerations
+
+- Use Next.js Image optimization through ImageWrapper
+- Implement proper loading states and error boundaries
+- Leverage Next.js built-in performance optimizations
+- Use proper font loading strategies

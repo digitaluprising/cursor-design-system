@@ -1,0 +1,52 @@
+---
+globs: *.tsx,*.ts
+---
+
+# Typography System Guidelines
+
+## Always Use the Typography Component
+
+Use the [Typography component](mdc:src/components/Typography.tsx) for all text elements instead of raw HTML tags or Tailwind text classes.
+
+## Typography Variants
+
+### Display Text (Hero Headlines)
+```tsx
+<Typography variant="display" size="9xl">Hero Headline</Typography>
+<Typography variant="display" size="6xl">Large Display</Typography>
+<Typography variant="display" size="3xl">Medium Display</Typography>
+```
+
+### Headings (SEO Optimized)
+```tsx
+<Typography as="h1" variant="heading" size="4xl">H1 Heading</Typography>
+<Typography as="h2" variant="heading" size="2xl">H2 Heading</Typography>
+<Typography as="h3" variant="subheading" size="xl">H3 Subheading</Typography>
+```
+
+### Body Text
+```tsx
+<Typography variant="body" size="base">Regular paragraph text</Typography>
+<Typography variant="lead" size="lg">Lead paragraph text</Typography>
+<Typography variant="large" size="xl">Large text for subheadings</Typography>
+```
+
+### Utility Text
+```tsx
+<Typography variant="small" size="sm">Small text for metadata</Typography>
+<Typography variant="caption" size="xs">Caption text with tracking</Typography>
+```
+
+## Key Principles
+
+1. **Semantic HTML**: Use the `as` prop to specify the HTML element (h1, h2, p, etc.)
+2. **Visual Hierarchy**: Combine `variant` (semantic meaning) with `size` (visual size)
+3. **Consistent Spacing**: The component handles margins automatically based on variant
+4. **Accessibility**: Proper heading hierarchy and semantic markup
+5. **Design System**: All typography follows the refined Apple-level design principles
+
+## Available Sizes
+xs, sm, base, lg, xl, 2xl, 3xl, 4xl, 5xl, 6xl, 7xl, 8xl, 9xl
+
+## Available Variants
+display, heading, subheading, body, lead, large, small, caption

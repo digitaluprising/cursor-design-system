@@ -1,0 +1,66 @@
+---
+globs: *.tsx,*.ts
+---
+
+# Component Development Patterns
+
+## Component Structure
+
+Follow this pattern for all React components:
+
+```tsx
+import React from 'react';
+
+interface ComponentNameProps {
+  // Define all props with proper types
+  children?: React.ReactNode;
+  className?: string;
+  // ... other props
+}
+
+/**
+ * Component description with purpose and key features
+ * Include important usage notes or design principles
+ */
+const ComponentName: React.FC<ComponentNameProps> = ({
+  children,
+  className = '',
+  // ... other props with defaults
+}) => {
+  // Component logic here
+  
+  return (
+    <div className={className}>
+      {children}
+    </div>
+  );
+};
+
+export default ComponentName;
+```
+
+## Key Patterns
+
+1. **Always use TypeScript interfaces** for props with proper typing
+2. **Include JSDoc comments** explaining the component's purpose and features
+3. **Use React.FC** type annotation for functional components
+4. **Default className to empty string** and merge with custom classes
+5. **Export as default** and import in [src/components/index.ts](mdc:src/components/index.ts)
+
+## Description Length Constraint
+
+Keep all descriptions (props, JSDoc, alt text, etc.) to **130 characters or less** - about the length of: "Cursor is a fork of VSCode, so you can use all your favorite extensions and keybindings. It's the editor you"
+
+## Styling Guidelines
+
+- Use Tailwind CSS classes with the custom design system tokens
+- Leverage CSS variables from [src/app/globals.css](mdc:src/app/globals.css)
+- Use the Typography component for all text elements
+- Follow the spacing and color system defined in [tailwind.config.ts](mdc:tailwind.config.ts)
+- Include hover states, focus states, and micro-animations for better UX
+
+## Image Handling
+
+- **Always use the ImageWrapper component** for images (follows user rule)
+- Use Next.js Image component through ImageWrapper for optimization
+- Provide proper alt text and sizing attributes

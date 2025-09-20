@@ -1,0 +1,60 @@
+---
+globs: *.tsx,*.ts,*.css
+---
+
+# Styling and Design Conventions
+
+## Color System
+
+Use the semantic color variables defined in [src/app/globals.css](mdc:src/app/globals.css):
+
+- `text-foreground` - Primary text color
+- `text-muted-foreground` - Secondary/muted text
+- `text-muted` - Tertiary text
+- `bg-background` - Main background
+- `border-border` - Border color
+- `ring-ring` - Focus ring color
+
+## Custom Cursor Brand Colors
+
+Use the custom cursor colors from [tailwind.config.ts](mdc:tailwind.config.ts):
+- `cursor-orange` - Primary brand color (#ff6b35)
+- `cursor-orange-light` - Light variant (#ff8c5a)
+- `cursor-orange-dark` - Dark variant (#e55a2b)
+- `cursor-dark` - Pure black (#000000)
+- `cursor-gray` - Dark gray (#0a0a0a)
+- `cursor-gray-light` - Light gray (#1a1a1a)
+- `cursor-gray-medium` - Medium gray (#27272a)
+
+## Spacing and Layout
+
+- Use the custom spacing scale: `18` (4.5rem), `88` (22rem), `128` (32rem)
+- Follow the 8px grid system for consistent spacing
+- Use semantic spacing classes: `space-y-*`, `gap-*`, `p-*`, `m-*`
+
+## Border Radius
+
+Use the CSS variable-based border radius:
+- `rounded-lg` - Uses `var(--radius)` (0.5rem)
+- `rounded-md` - Uses `calc(var(--radius) - 2px)`
+- `rounded-sm` - Uses `calc(var(--radius) - 4px)`
+
+## Animations
+
+Use the custom animations defined in [tailwind.config.ts](mdc:tailwind.config.ts):
+- `animate-fade-in` - Fade in effect
+- `animate-slide-up` - Slide up from bottom
+- `animate-scale-in` - Scale in effect
+
+## Focus and Interaction States
+
+- Always include focus states with `focus:ring-2 focus:ring-offset-2`
+- Use `focus:ring-ring` for consistent focus color
+- Include hover states for interactive elements
+- Use `active:scale-[0.98]` for button press feedback
+
+## Typography
+
+- Use the Inter font family (loaded in [src/app/globals.css](mdc:src/app/globals.css))
+- Leverage font-feature-settings for better typography
+- Use the Typography component instead of raw text classes

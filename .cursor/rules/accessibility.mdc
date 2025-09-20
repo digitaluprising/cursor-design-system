@@ -1,0 +1,91 @@
+---
+globs: *.tsx,*.ts
+---
+
+# Accessibility Guidelines
+
+## Semantic HTML
+
+Always use semantic HTML elements with proper hierarchy:
+
+```tsx
+// ✅ Correct - semantic heading structure
+<Typography as="h1" variant="heading" size="4xl">Main Title</Typography>
+<Typography as="h2" variant="heading" size="2xl">Section Title</Typography>
+<Typography as="h3" variant="subheading" size="xl">Subsection Title</Typography>
+
+// ❌ Avoid - non-semantic elements for headings
+<div className="text-4xl font-bold">Main Title</div>
+```
+
+## Focus Management
+
+Ensure proper focus states for all interactive elements:
+
+```tsx
+// ✅ Correct - proper focus states
+<button className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ring">
+  Click me
+</button>
+
+// ✅ Correct - using Button component with built-in focus states
+<Button variant="primary">Click me</Button>
+```
+
+## Color Contrast
+
+- Use the semantic color system from [src/app/globals.css](mdc:src/app/globals.css)
+- Ensure sufficient contrast between text and background
+- Test with accessibility tools and screen readers
+
+## Alt Text for Images
+
+Always provide descriptive alt text (max 130 characters):
+
+```tsx
+// ✅ Correct - descriptive alt text within limit
+<ImageWrapper
+  src="/hero-image.jpg"
+  alt="Developer using Cursor AI code editor on laptop"
+  width={800}
+  height={600}
+/>
+
+// ❌ Avoid - generic or empty alt text
+<ImageWrapper
+  src="/hero-image.jpg"
+  alt="image"
+  width={800}
+  height={600}
+/>
+```
+
+## Keyboard Navigation
+
+- Ensure all interactive elements are keyboard accessible
+- Use proper tab order
+- Include visible focus indicators
+- Support keyboard shortcuts where appropriate
+
+## ARIA Labels
+
+Use ARIA labels for complex interactions:
+
+```tsx
+// ✅ Correct - ARIA labels for complex components
+<div
+  role="button"
+  aria-label="Close dialog"
+  tabIndex={0}
+  onClick={handleClose}
+>
+  ×
+</div>
+```
+
+## Screen Reader Support
+
+- Test with screen readers
+- Use proper heading hierarchy
+- Provide meaningful link text
+- Include skip links for navigation

@@ -1,0 +1,78 @@
+---
+globs: *.tsx,*.ts
+---
+
+# Performance Optimization Guidelines
+
+## Image Optimization
+
+Always use Next.js Image component through ImageWrapper for optimal performance:
+
+```tsx
+// ✅ Correct - optimized images
+<ImageWrapper
+  src="/optimized-image.jpg"
+  alt="Description"
+  width={800}
+  height={600}
+  priority={true} // For above-the-fold images
+  sizes="(max-width: 768px) 100vw, 50vw"
+/>
+
+// ❌ Avoid - unoptimized images
+<img src="/image.jpg" alt="Description" />
+```
+
+## Component Optimization
+
+Use React best practices for performance:
+
+```tsx
+// ✅ Correct - memo for expensive components
+const ExpensiveComponent = React.memo(({ data }) => {
+  return <div>{/* complex rendering */}</div>;
+});
+
+// ✅ Correct - useCallback for event handlers
+const handleClick = useCallback(() => {
+  // handle click
+}, [dependency]);
+```
+
+## Bundle Optimization
+
+- Use dynamic imports for code splitting
+- Lazy load non-critical components
+- Optimize bundle size with proper imports
+
+## Font Loading
+
+The project uses Inter font with proper loading strategy in [src/app/globals.css](mdc:src/app/globals.css):
+
+```css
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+```
+
+## CSS Optimization
+
+- Use Tailwind's purging to remove unused styles
+- Leverage CSS variables for theming
+- Use efficient selectors and avoid deep nesting
+
+## Animation Performance
+
+Use GPU-accelerated animations:
+
+```tsx
+// ✅ Correct - GPU-accelerated transforms
+className="transform-gpu active:scale-[0.98]"
+
+// ✅ Correct - efficient transitions
+className="transition-all duration-200 ease-out"
+```
+
+## Memory Management
+
+- Clean up event listeners and subscriptions
+- Use proper dependency arrays in useEffect
+- Avoid memory leaks in component unmounting
