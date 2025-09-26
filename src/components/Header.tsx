@@ -29,7 +29,8 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
           <div className="flex-shrink-0">
             <a href="#" className="group">
               <Typography 
-                variant="h6" 
+                variant="heading" 
+                size="lg"
                 className="text-foreground font-bold group-hover:text-cursor-orange transition-colors duration-200"
               >
                 Cursor

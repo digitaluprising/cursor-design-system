@@ -12,4 +12,5 @@ export { default as PartnerLogos } from './PartnerLogos';
 export { default as PartnerLogosExample } from './PartnerLogosExample';
 export { default as TestimonialCard } from './TestimonialCard';
 export { default as TextLink } from './TextLink';
+export { ThemeProvider, useTheme } from './ThemeProvider';
 export { default as Typography } from './Typography';

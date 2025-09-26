@@ -46,14 +46,14 @@ const ChangelogExample: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-left mb-12">
-          <Typography variant="h4" className="text-white mb-4">
+          <Typography variant="heading" size="4xl" className="text-foreground mb-4">
             Changelog
           </Typography>
         </div>
 
         {/* Changelog Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {changelogData.map((item, index) => (
+          {changelogData.map((item) => (
             <ChangelogCard
               key={item.version}
               version={item.version}
@@ -67,7 +67,7 @@ const ChangelogExample: React.FC = () => {
         {/* Bottom Link */}
         <div className="text-center">
           <TextLink href="https://cursor.sh/changelog">
-            See what's new in Cursor →
+            See what&apos;s new in Cursor →
           </TextLink>
         </div>
       </div>

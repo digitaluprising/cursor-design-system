@@ -34,9 +34,9 @@ const Button: React.FC<ButtonProps> = ({
   
   const variantClasses = {
     primary: `
-      bg-white text-black
-      hover:bg-gray-50 hover:shadow-lg hover:shadow-white/10
-      focus:ring-gray-300
+      bg-foreground text-background
+      hover:bg-foreground/90 hover:shadow-lg hover:shadow-foreground/10
+      focus:ring-foreground/20
       shadow-sm
     `,
     secondary: `

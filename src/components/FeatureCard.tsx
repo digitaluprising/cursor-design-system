@@ -36,11 +36,11 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
         <Typography variant="display" className="text-foreground !mb-4" size='xl'>
           {title}
         </Typography>
-        <Typography variant="lead" className="text-muted max-w-2xl leading-relaxed" size="xl">
+        <Typography variant="lead" className="max-w-2xl leading-relaxed" size="xl">
           {description}
         </Typography>
       </div>
-      <Button variant="link" size="lg" className="p-0 h-auto text-left text-orange-500 hover:text-orange-400">
+      <Button variant="link" size="lg" className="p-0 h-auto text-left">
         {linkText} →
       </Button>
     </div>
@@ -48,16 +48,16 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   
   const codeEditor = (
     <div className="w-full lg:w-2/3 relative">
-      <div className="bg-gray-900 rounded-lg border border-gray-700 overflow-hidden shadow-2xl h-[66.67vh] lg:h-auto">
+      <div className="bg-cursor-gray rounded-lg border border-border overflow-hidden shadow-2xl h-[66.67vh] lg:h-auto">
         {/* Code Editor Header */}
-        <div className="bg-gray-800 border-b border-gray-700 px-4 py-3 flex items-center space-x-2">
+        <div className="bg-cursor-gray-light border-b border-border px-4 py-3 flex items-center space-x-2">
           <div className="flex space-x-2">
             <div className="w-3 h-3 bg-red-500 rounded-full"></div>
             <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
             <div className="w-3 h-3 bg-green-500 rounded-full"></div>
           </div>
           <div className="flex-1 flex justify-center">
-            <div className="bg-gray-700 px-3 py-1 rounded text-xs text-gray-300">
+            <div className="bg-cursor-gray-medium px-3 py-1 rounded text-xs text-muted-foreground">
               Dashboard.tsx
             </div>
           </div>
@@ -65,7 +65,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
         
         {/* Code Content */}
         <div className="p-6 font-mono text-sm h-full overflow-auto">
-          <pre className="text-gray-300 whitespace-pre-wrap">
+          <pre className="text-muted-foreground whitespace-pre-wrap">
 {codeContent || `"use client";
 
 import React, { useState } from 'react';
@@ -99,11 +99,11 @@ export default function Dashboard() {
           src={imageSrc}
           alt={imageAlt}
           fill={true}
-          className="rounded-2xl shadow-2xl shadow-black/20 h-full"
+          className="rounded-2xl shadow-2xl shadow-foreground/20 h-full"
           sizes="(max-width: 1024px) 100vw, 66vw"
         />
       ) : (
-        <div className="absolute inset-0 bg-gradient-to-br from-cursor-gray-light to-cursor-gray rounded-2xl p-12 flex items-center justify-center shadow-2xl shadow-black/20">
+        <div className="absolute inset-0 bg-gradient-to-br from-cursor-gray-light to-cursor-gray rounded-2xl p-12 flex items-center justify-center shadow-2xl shadow-foreground/20">
           <div className="text-center space-y-4">
             <div className="w-20 h-20 bg-gradient-to-br from-cursor-orange/20 to-cursor-orange/10 rounded-2xl mx-auto flex items-center justify-center">
               <div className="w-8 h-8 bg-cursor-orange/40 rounded-lg"></div>
@@ -122,7 +122,7 @@ export default function Dashboard() {
   );
   
   return (
-    <section className={`h-[80vh] px-4 sm:px-6 lg:px-8 flex items-center transition-all duration-150 ease-out hover:bg-gray-700/20 hover:shadow-xl rounded-2xl ${className}`}>
+    <section className={`h-[80vh] px-4 sm:px-6 lg:px-8 flex items-center transition-all duration-150 ease-out hover:bg-muted/20 hover:shadow-xl rounded-2xl ${className}`}>
       <div className="max-w-7xl mx-auto w-full h-full">
         <div className={`flex flex-col lg:flex-row items-center gap-16 lg:gap-20 h-full ${
           reverse ? 'lg:flex-row-reverse' : ''

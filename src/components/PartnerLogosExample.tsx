@@ -11,14 +11,14 @@ const PartnerLogosExample: React.FC = () => {
   const enterprisePartners = ['Microsoft', 'Google', 'Apple', 'Meta', 'Netflix', 'Spotify'];
 
   return (
-    <div className="space-y-20 bg-gray-950 min-h-screen">
+    <div className="space-y-20 bg-background min-h-screen">
       {/* Main showcase */}
       <section className="pt-20">
         <PartnerLogos partners={techPartners} />
       </section>
 
       {/* Extended partner list */}
-      <section className="bg-gray-900/50 py-16">
+      <section className="bg-muted/30 py-16">
         <PartnerLogos 
           partners={enterprisePartners} 
           logoOptions={{ 

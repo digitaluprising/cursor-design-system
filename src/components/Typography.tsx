@@ -46,7 +46,7 @@ const Typography: React.FC<TypographyProps> = ({
     heading: 'font-bold leading-[1.2] tracking-[-0.015em]',
     subheading: 'font-semibold leading-[1.2] tracking-[-0.005em]',
     body: 'font-normal leading-[1.4]',
-    lead: 'font-normal leading-[1.4] text-muted',
+    lead: 'font-normal leading-[1.4] text-muted-foreground',
     large: 'font-normal leading-[1.4] text-muted-foreground',
     small: 'font-normal leading-[1.4] text-muted-foreground',
     caption: 'font-medium leading-[1.4] text-muted-foreground uppercase tracking-wider',

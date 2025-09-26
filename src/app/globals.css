@@ -2,6 +2,7 @@
 @import "tailwindcss";
 
 :root {
+  /* Dark theme (default) */
   --background: #000000;
   --foreground: #ffffff;
   --muted: #a1a1aa;
@@ -10,6 +11,28 @@
   --input: #27272a;
   --ring: #ff6b35;
   --radius: 0.5rem;
+}
+
+[data-theme="light"] {
+  /* Light theme */
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  --muted: #f4f4f5;
+  --muted-foreground: #52525b;
+  --border: #e4e4e7;
+  --input: #f4f4f5;
+  --ring: #ff6b35;
+}
+
+[data-theme="dark"] {
+  /* Dark theme */
+  --background: #000000;
+  --foreground: #ffffff;
+  --muted: #a1a1aa;
+  --muted-foreground: #a1a1aa;
+  --border: #27272a;
+  --input: #27272a;
+  --ring: #ff6b35;
 }
 
 @theme {
@@ -49,11 +72,19 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.1);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.2);
 }
 

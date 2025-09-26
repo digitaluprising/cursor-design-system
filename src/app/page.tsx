@@ -103,7 +103,7 @@ export default function Home() {
                 </Typography>
               </div>
               <div>
-                <Typography variant="lead" size="lg" className="text-muted">
+                <Typography variant="lead" size="lg">
                   Lead text - This is a lead paragraph that stands out from regular body text with refined spacing.
                 </Typography>
                 <Typography variant="caption" size="xs" className="text-muted-foreground mt-2">

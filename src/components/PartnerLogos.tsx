@@ -60,7 +60,7 @@ const PartnerLogos: React.FC<PartnerLogosProps> = ({
       <div className={`py-16 ${className}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header text */}
-          <p className="text-center text-gray-400 text-lg mb-12 font-medium">
+          <p className="text-center text-muted-foreground text-lg mb-12 font-medium">
             Trusted every day by millions of professional developers.
           </p>
           
@@ -69,9 +69,9 @@ const PartnerLogos: React.FC<PartnerLogosProps> = ({
             {partners.map((partner) => (
               <div
                 key={partner}
-                className="bg-gray-800/50 rounded-lg px-6 py-4 flex items-center justify-center min-w-[140px] h-16 animate-pulse"
+                className="bg-muted/50 rounded-lg px-6 py-4 flex items-center justify-center min-w-[140px] h-16 animate-pulse"
               >
-                <div className="w-20 h-6 bg-gray-700 rounded"></div>
+                <div className="w-20 h-6 bg-muted-foreground/30 rounded"></div>
               </div>
             ))}
           </div>
@@ -84,7 +84,7 @@ const PartnerLogos: React.FC<PartnerLogosProps> = ({
     <div className={`py-16 ${className}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header text */}
-        <p className="text-center text-gray-400 text-lg mb-12 font-medium">
+        <p className="text-center text-muted-foreground text-lg mb-12 font-medium">
           Trusted every day by millions of professional developers.
         </p>
         
@@ -93,7 +93,7 @@ const PartnerLogos: React.FC<PartnerLogosProps> = ({
           {logos.map((logo, index) => (
             <div
               key={logo.domain}
-              className="bg-gray-800/50 rounded-lg flex items-center justify-center aspect-[4/3] hover:bg-gray-700/50 transition-all duration-200 group"
+              className="bg-muted/50 rounded-lg flex items-center justify-center aspect-[4/3] hover:bg-muted/70 transition-all duration-200 group"
             >
               <img
                 src={logo.url}
@@ -112,7 +112,7 @@ const PartnerLogos: React.FC<PartnerLogosProps> = ({
                   
                   if (showFallbackText) {
                     const fallbackDiv = document.createElement('div');
-                    fallbackDiv.className = 'text-white font-semibold text-sm group-hover:text-gray-300 transition-colors duration-200 text-center px-2';
+                    fallbackDiv.className = 'text-foreground font-semibold text-sm group-hover:text-muted-foreground transition-colors duration-200 text-center px-2';
                     fallbackDiv.textContent = partners[index];
                     target.parentNode?.appendChild(fallbackDiv);
                   }
@@ -122,7 +122,7 @@ const PartnerLogos: React.FC<PartnerLogosProps> = ({
           ))}
         </div>
         {error && (
-          <div className="text-center text-gray-500 text-sm mt-4">
+          <div className="text-center text-muted-foreground text-sm mt-4">
             {error}
           </div>
         )}
