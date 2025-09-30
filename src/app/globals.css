@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&display=swap');
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 :root {
   /* Dark theme (default) */
@@ -36,6 +37,7 @@
 }
 
 @theme {
+  /* Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
@@ -43,8 +45,103 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  
+  /* Cursor brand colors */
+  --color-cursor-orange: #ff6b35;
+  --color-cursor-orange-light: #ff8c5a;
+  --color-cursor-orange-dark: #e55a2b;
+  --color-cursor-dark: #000000;
+  --color-cursor-gray: #0a0a0a;
+  --color-cursor-gray-light: #1a1a1a;
+  --color-cursor-gray-medium: #27272a;
+  
+  /* Typography */
   --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Font size system - change --font-ratio to scale all sizes */
+  /* 
+   * Common ratios:
+   * 1.067 (minor second) - subtle scaling
+   * 1.125 (major second) - gentle scaling  
+   * 1.25 (major third) - moderate scaling (current)
+   * 1.333 (perfect fourth) - strong scaling
+   * 1.414 (augmented fourth) - dramatic scaling
+   * 1.5 (perfect fifth) - very dramatic scaling
+   * 
+   * To change the scale, simply update --font-ratio below
+   */
+  --font-ratio: 1.25; /* Major third ratio - change this to adjust all font sizes */
+  --font-size-base: 1rem; /* Base size - always 1rem */
+  
+  /* Font sizes - automatically calculated based on ratio */
+  /* Each size is base * ratio^power (or base / ratio^power for smaller sizes) */
+  /* 
+   * Fallback values for browsers without pow() support (ratio = 1.25):
+   * 2xs: 0.512rem, xs: 0.64rem, sm: 0.8rem, base: 1rem, lg: 1.25rem, 
+   * xl: 1.563rem, 2xl: 1.953rem, 3xl: 2.441rem, 4xl: 3.052rem, 5xl: 3.815rem
+   */
+  --font-size-2xs: calc(var(--font-size-base) / pow(var(--font-ratio), 3)); /* base / ratio³ */
+  --font-size-xs: calc(var(--font-size-base) / pow(var(--font-ratio), 2));  /* base / ratio² */
+  --font-size-sm: calc(var(--font-size-base) / var(--font-ratio));          /* base / ratio */
+  --font-size-base: var(--font-size-base);                                  /* base (1rem) */
+  --font-size-lg: calc(var(--font-size-base) * var(--font-ratio));         /* base * ratio */
+  --font-size-xl: calc(var(--font-size-base) * pow(var(--font-ratio), 2)); /* base * ratio² */
+  --font-size-2xl: calc(var(--font-size-base) * pow(var(--font-ratio), 3)); /* base * ratio³ */
+  --font-size-3xl: calc(var(--font-size-base) * pow(var(--font-ratio), 4)); /* base * ratio⁴ */
+  --font-size-4xl: calc(var(--font-size-base) * pow(var(--font-ratio), 5)); /* base * ratio⁵ */
+  --font-size-5xl: calc(var(--font-size-base) * pow(var(--font-ratio), 6)); /* base * ratio⁶ */
+  --font-size-6xl: calc(var(--font-size-base) * pow(var(--font-ratio), 7)); /* base * ratio⁷ */
+  --font-size-7xl: calc(var(--font-size-base) * pow(var(--font-ratio), 8)); /* base * ratio⁸ */
+  --font-size-8xl: calc(var(--font-size-base) * pow(var(--font-ratio), 9)); /* base * ratio⁹ */
+  --font-size-9xl: calc(var(--font-size-base) * pow(var(--font-ratio), 10)); /* base * ratio¹⁰ */
+  
+  /* Line heights - proportional to font sizes */
+  --line-height-2xs: calc(var(--font-size-2xs) * 1.2);
+  --line-height-xs: calc(var(--font-size-xs) * 1.33);
+  --line-height-sm: calc(var(--font-size-sm) * 1.43);
+  --line-height-base: calc(var(--font-size-base) * 1.5);
+  --line-height-lg: calc(var(--font-size-lg) * 1.56);
+  --line-height-xl: calc(var(--font-size-xl) * 1.4);
+  --line-height-2xl: calc(var(--font-size-2xl) * 1.33);
+  --line-height-3xl: calc(var(--font-size-3xl) * 1.2);
+  --line-height-4xl: calc(var(--font-size-4xl) * 1.11);
+  --line-height-5xl: 1;
+  --line-height-6xl: 1;
+  --line-height-7xl: 1;
+  --line-height-8xl: 1;
+  --line-height-9xl: 1;
+  
+  /* Spacing */
+  --spacing-18: 4.5rem;
+  --spacing-88: 22rem;
+  --spacing-128: 32rem;
+  
+  /* Border radius */
   --radius: var(--radius);
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+  
+  /* Animations */
+  --animate-fade-in: fadeIn 0.5s ease-in-out;
+  --animate-slide-up: slideUp 0.5s ease-out;
+  --animate-scale-in: scaleIn 0.3s ease-out;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+  0% { transform: scale(0.95); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
 }
 
 * {

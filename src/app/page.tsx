@@ -6,6 +6,7 @@ import {
   Footer,
   Header,
   HeroSection,
+  ParetoFooter,
   PartnerLogos,
   TestimonialCard,
   Typography,
@@ -184,6 +185,87 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Font Scaling System Demo */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 mb-32">
+        <div className="max-w-7xl mx-auto">
+          <div className="space-y-12">
+            <div className="text-center">
+              <Typography variant="heading" size="3xl" className="text-foreground mb-4">
+                Font Scaling System
+              </Typography>
+              <Typography variant="body" size="lg" className="text-muted-foreground max-w-3xl mx-auto">
+                Change the --font-ratio variable in globals.css to scale all font sizes proportionally. 
+                The base size is always 1rem, and all other sizes are calculated using the ratio.
+              </Typography>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="space-y-6">
+                <Typography variant="heading" size="xl" className="text-foreground">
+                  Current Scale (1.25 ratio)
+                </Typography>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between p-4 bg-muted/20 rounded-lg">
+                    <span className="text-2xs text-muted-foreground">2xs</span>
+                    <span className="text-2xs">Extra small text</span>
+                  </div>
+                  <div className="flex items-center justify-between p-4 bg-muted/20 rounded-lg">
+                    <span className="text-xs text-muted-foreground">xs</span>
+                    <span className="text-xs">Small text</span>
+                  </div>
+                  <div className="flex items-center justify-between p-4 bg-muted/20 rounded-lg">
+                    <span className="text-sm text-muted-foreground">sm</span>
+                    <span className="text-sm">Small text</span>
+                  </div>
+                  <div className="flex items-center justify-between p-4 bg-muted/20 rounded-lg">
+                    <span className="text-base text-muted-foreground">base</span>
+                    <span className="text-base">Base text (1rem)</span>
+                  </div>
+                  <div className="flex items-center justify-between p-4 bg-muted/20 rounded-lg">
+                    <span className="text-lg text-muted-foreground">lg</span>
+                    <span className="text-lg">Large text</span>
+                  </div>
+                  <div className="flex items-center justify-between p-4 bg-muted/20 rounded-lg">
+                    <span className="text-xl text-muted-foreground">xl</span>
+                    <span className="text-xl">Extra large text</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="space-y-6">
+                <Typography variant="heading" size="xl" className="text-foreground">
+                  How to Change the Scale
+                </Typography>
+                <div className="space-y-4">
+                  <div className="p-4 bg-muted/20 rounded-lg">
+                    <Typography variant="body" size="sm" className="text-foreground mb-2">
+                      Edit globals.css:
+                    </Typography>
+                    <code className="text-xs text-muted-foreground block">
+                      --font-ratio: 1.5; /* Change this value */
+                    </code>
+                    <Typography variant="body" size="xs" className="text-muted-foreground mt-2">
+                      Uses CSS pow() function for clean calculations
+                    </Typography>
+                  </div>
+                  <div className="p-4 bg-muted/20 rounded-lg">
+                    <Typography variant="body" size="sm" className="text-foreground mb-2">
+                      Common ratios:
+                    </Typography>
+                    <ul className="text-xs text-muted-foreground space-y-1">
+                      <li>• 1.125 - Gentle scaling</li>
+                      <li>• 1.25 - Moderate scaling (current)</li>
+                      <li>• 1.333 - Strong scaling</li>
+                      <li>• 1.5 - Dramatic scaling</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Button Component */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 mb-32">
         <div className="max-w-7xl mx-auto">
@@ -324,6 +406,9 @@ export default function Dashboard() {
       {/* Footer Component */}
       <section>
         <Footer />
+      </section>
+      <section>
+        <ParetoFooter />
       </section>
     </div>
   );

@@ -29,10 +29,6 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
           &ldquo;{quote}&rdquo;
         </Typography>
         
-        {/* Quote decoration */}
-        <div className="absolute -top-2 -left-2 w-8 h-8 bg-cursor-orange/10 rounded-full flex items-center justify-center">
-          <div className="w-3 h-3 bg-cursor-orange/40 rounded-full"></div>
-        </div>
       </div>
       
       {/* Author */}

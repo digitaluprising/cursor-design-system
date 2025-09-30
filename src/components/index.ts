@@ -8,6 +8,7 @@ export { default as Footer } from './Footer';
 export { default as Header } from './Header';
 export { default as HeroSection } from './HeroSection';
 export { default as ImageWrapper } from './ImageWrapper';
+export { default as ParetoFooter } from './ParetoFooter';
 export { default as PartnerLogos } from './PartnerLogos';
 export { default as PartnerLogosExample } from './PartnerLogosExample';
 export { default as TestimonialCard } from './TestimonialCard';
