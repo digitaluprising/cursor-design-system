@@ -45,6 +45,39 @@ Use the [Typography component](mdc:src/components/Typography.tsx) for all text e
 4. **Accessibility**: Proper heading hierarchy and semantic markup
 5. **Design System**: All typography follows the refined Apple-level design principles
 
+## Automatic Scale Calculation
+
+The Typography component automatically calculates and applies:
+
+### Font Weights
+- **Display**: `font-extrabold` (900) for maximum impact
+- **Heading**: `font-bold` (700) for strong hierarchy
+- **Subheading**: `font-semibold` (600) for secondary headings
+- **Body/Lead/Large**: `font-normal` (400) for readability
+- **Small**: `font-normal` (400) for subtle text
+- **Caption**: `font-medium` (500) for emphasis
+
+### Line Heights
+- **Display**: `leading-[1.1]` for tight, impactful headlines
+- **Heading/Subheading**: `leading-[1.2]` for balanced readability
+- **Body/Lead/Large/Small/Caption**: `leading-[1.4]` for comfortable reading
+
+### Letter Spacing (Tracking)
+- **Display**: `tracking-[-0.02em]` for refined large text
+- **Heading**: `tracking-[-0.015em]` for clean headings
+- **Subheading**: `tracking-[-0.005em]` for subtle refinement
+- **Caption**: `tracking-wider` for uppercase emphasis
+
+### Margins
+- **Display**: `mb-8` (2rem) for major sections
+- **Heading**: `mb-6` (1.5rem) for section breaks
+- **Subheading/Body/Lead/Large**: `mb-4` (1rem) for paragraphs
+- **Small/Caption**: `mb-2` (0.5rem) for metadata
+
+### Color Application
+- **Lead/Large/Small/Caption**: Automatically applies `text-muted-foreground`
+- **Display/Heading/Subheading/Body**: Uses default foreground color
+
 ## Available Sizes
 xs, sm, base, lg, xl, 2xl, 3xl, 4xl, 5xl, 6xl, 7xl, 8xl, 9xl
 
